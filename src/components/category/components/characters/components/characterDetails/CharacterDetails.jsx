@@ -3,6 +3,9 @@ import characters from '../../../../../../jsons/characters.json'
 
 export const CharacterDetails = () => {
     const character = useDataById(characters)
+    if (!character) {
+        return (<div>Не найдено</div>)
+    }
 
     return (
             <div className="card">

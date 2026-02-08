@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router'
 import { MainLayout } from './components/mainLayout/MainLayout'
 import { CharacterDetails, Characters, EpisodeDetails, Episodes, Greeting, Locations, LocationDetails } from './components/category/components'
+import { NotFound } from './components'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/episodes/:id' element={<EpisodeDetails/>}/>
         <Route path='/locations' element={<Locations/>}/>
         <Route path='/locations/:id' element={<LocationDetails/>}/>
+        <Route path='*' element={<NotFound/>}/>
       </Route>
     </Routes>
 
