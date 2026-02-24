@@ -1,19 +1,22 @@
-import { useDataById } from "../../../../../../hooks"
-import characters from '../../../../../../jsons/characters.json'
+import {  useParams } from "react-router"
+import { useSearchDetails } from "../../../../../../hooks/useSearchDetails"
+
 
 export const CharacterDetails = () => {
-    const character = useDataById(characters)
-    if (!character) {
-        return (<div>Не найдено</div>)
-    }
+    const {id} = useParams()
+
+    const {loading, details: character} = useSearchDetails('character', id)
 
     return (
-            <div className="card">
+        <>
+            {loading ? <>Loading...</> : <div className="card">
                 <img src={character.image}></img>
                 <p>Имя: {character.name}</p>
                 <p>Статус: {character.status}</p>
                 <p>Вид: {character.species}</p>
                 <p>Пол: {character.gender}</p>
-            </div>
+            </div>}
+        </>
+            
         )
 }

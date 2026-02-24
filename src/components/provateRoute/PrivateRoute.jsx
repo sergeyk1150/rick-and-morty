@@ -1,5 +1,6 @@
 import { Navigate, Outlet, useLocation } from "react-router"
 import { useAuth } from "../../context/useAuth"
+import { Suspense } from "react"
 
 export const PrivateRoute = () => {
     const auth = useAuth()
