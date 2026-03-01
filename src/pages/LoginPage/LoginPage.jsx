@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router"
-import { useAuth } from "../../entities"
+import { useAuth } from "@/entities"
 
 export const LoginPage = () => {
     const auth = useAuth()

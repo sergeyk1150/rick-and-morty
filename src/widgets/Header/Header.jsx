@@ -1,7 +1,5 @@
 import { Link, useNavigate } from "react-router"
-import { AuthStatus, useAuth } from "../../entities"
-
-
+import { AuthStatus, useAuth } from "@/entities"
 
 export const Header = ()  => {
     const navigate = useNavigate()

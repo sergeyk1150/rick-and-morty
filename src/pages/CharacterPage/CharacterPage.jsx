@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import { useCharacter } from "../../entities"
+import { useCharacter } from "@/entities"
 
 
 export const CharacterPage = () => {

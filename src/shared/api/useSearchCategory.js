@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const useSearchCategory = (requestFn, id) => {
   const [loading, setLoading] = useState(true);
@@ -14,6 +15,9 @@ export const useSearchCategory = (requestFn, id) => {
         setLoading(false);
       })
       .catch((e) => {
+        if (axios.isCancel(e)) {
+          return;
+        }
         setError(true);
         console.error(e);
       });

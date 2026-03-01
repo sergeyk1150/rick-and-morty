@@ -1,6 +1,18 @@
 import { Routes, Route } from "react-router"
 import { PrivateRoute } from "./provateRoute"
-import { MainLayout, CharactersPage, HomePage, LoginPage, NotFoundPage, EpisodesPage, LocationsPage, EpisodePage, LocationPage, CharacterPage } from "../../pages"
+import { lazy } from "react"
+// import { MainLayout, CharactersPage, HomePage, LoginPage, NotFoundPage, EpisodesPage, LocationsPage, EpisodePage, LocationPage, CharacterPage } from "@/pages"
+
+const HomePage = lazy(() => import('@/pages').then((module)=>({default: module.HomePage})))
+const CharactersPage = lazy(() => import('@/pages').then((module)=>({default: module.CharactersPage})))
+const CharacterPage = lazy(() => import('@/pages').then((module)=>({default: module.CharacterPage})))
+const EpisodesPage = lazy(() => import('@/pages').then((module)=>({default: module.EpisodesPage})))
+const LocationsPage = lazy(() => import('@/pages').then((module)=>({default: module.LocationsPage})))
+const EpisodePage = lazy(() => import('@/pages').then((module)=>({default: module.EpisodePage})))
+const LocationPage = lazy(() => import('@/pages').then((module)=>({default: module.LocationPage})))
+const MainLayout = lazy(() => import('@/pages').then((module)=>({default: module.MainLayout})))
+const LoginPage = lazy(() => import('@/pages').then((module)=>({default: module.LoginPage})))
+const NotFoundPage = lazy(() => import('@/pages').then((module)=>({default: module.NotFoundPage})))
 
 export const Router = () => {
     return (
@@ -16,7 +28,7 @@ export const Router = () => {
                     <Route path="/locations" element={<LocationsPage/>}/>
                     <Route path="/locations/:id" element={<LocationPage/>}/>
                 </Route>
-                <Route path="/*" element={<NotFoundPage/>}/>
+                <Route path="*" element={<NotFoundPage/>}/>
             </Route>
         </Routes>
     )

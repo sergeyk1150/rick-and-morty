@@ -1,7 +1,7 @@
-import { useLocations } from "../../entities"
+import { useLocations } from "@/entities"
 import { useState } from "react"
-import { DEFAULTS } from "../../shared"
-import { List, useObserver } from "../../shared"
+import { DEFAULTS } from "@/shared"
+import { List, useObserver } from "@/shared"
 
 export const LocationsPage = () => {
     const [pageNumber, setPageNumber] = useState(DEFAULTS.DEFAULT_PAGE)

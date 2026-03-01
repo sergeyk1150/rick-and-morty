@@ -1,4 +1,4 @@
-import { authenticate } from "../../../shared"
+import { authenticate } from "@/shared"
 import { useAuth } from "./useAuth"
 
 export const AuthStatus = () => {

@@ -1,4 +1,4 @@
-import { useSearchCategory } from "../../../shared";
+import { useSearchCategory } from "@/shared";
 import { fetchLocation } from "./api";
 
 export function useLocation(id) {

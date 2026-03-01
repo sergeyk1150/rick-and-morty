@@ -1,7 +1,7 @@
-import { useEpisodes } from "../../entities"
+import { useEpisodes } from "@/entities"
 import { useState } from "react"
-import { DEFAULTS } from "../../shared"
-import { List, useObserver } from "../../shared"
+import { DEFAULTS } from "@/shared"
+import { List, useObserver } from "@/shared"
 
 export const EpisodesPage = () => {
     const [pageNumber, setPageNumber] = useState(DEFAULTS.DEFAULT_PAGE)

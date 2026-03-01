@@ -1,4 +1,4 @@
-import { usePaginateRequest } from "../../../shared";
+import { usePaginateRequest } from "@/shared";
 import { fetchEpisodes } from "./api";
 
 export const useEpisodes = (page) => {

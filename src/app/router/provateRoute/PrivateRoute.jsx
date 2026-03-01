@@ -1,5 +1,5 @@
 import { Navigate, Outlet, useLocation } from "react-router"
-import { useAuth } from "../../../entities/user/model/useAuth"
+import { useAuth } from "@/entities/user/model/useAuth"
 
 
 export const PrivateRoute = () => {

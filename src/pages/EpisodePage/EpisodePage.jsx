@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import { useEpisode } from "../../entities/episodes/model/useEpisode"
+import { useEpisode } from "@/entities/episodes/model/useEpisode"
 export const EpisodePage = () => {
     const {id} = useParams()
     const {loading, details: episode} = useEpisode(id)

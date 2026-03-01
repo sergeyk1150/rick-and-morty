@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import { useLocation } from "../../entities"
+import { useLocation } from "@/entities"
 
 export const LocationPage = () => {
     const {id} = useParams()

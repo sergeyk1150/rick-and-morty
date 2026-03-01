@@ -1,7 +1,7 @@
-import { useCharacters } from "../../entities"
+import { useCharacters } from "@/entities"
 import { useState } from "react"
-import { DEFAULTS } from "../../shared"
-import { List, useObserver } from "../../shared"
+import { DEFAULTS } from "@/shared"
+import { List, useObserver } from "@/shared"
 
 export const CharactersPage = () => {
     const [pageNumber, setPageNumber] = useState(DEFAULTS.DEFAULT_PAGE)

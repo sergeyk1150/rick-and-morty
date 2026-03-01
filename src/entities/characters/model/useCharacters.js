@@ -1,4 +1,4 @@
-import { usePaginateRequest } from "../../../shared";
+import { usePaginateRequest } from "@/shared";
 import { fetchCharacters } from "./api";
 
 export const useCharacters = (page) => {

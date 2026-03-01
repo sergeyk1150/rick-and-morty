@@ -1,15 +1,16 @@
-import { ErrorBoundary } from "../../shared/components"
+import { ErrorBoundary } from "@/shared/components"
+import { Suspense } from "react"
 
 export const Main = ({children}) => {
 
     return (
         <main>
             <ErrorBoundary>
-                {children}
+                {/* {children} */}
                 {/* <Outlet/> */}
-                {/* <Suspense>
-                    <Outlet/>
-                </Suspense> */}
+                <Suspense>
+                    {children}
+                </Suspense>
             </ErrorBoundary>
         </main>
     )
