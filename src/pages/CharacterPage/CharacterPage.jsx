@@ -9,10 +9,10 @@ export const CharacterPage = () => {
         <>
             {loading ? <>Loading...</> : <div className="card">
                 <img src={character.image}></img>
-                <p>Имя: {character.name}</p>
-                <p>Статус: {character.status}</p>
-                <p>Вид: {character.species}</p>
-                <p>Пол: {character.gender}</p>
+                <p className="card__opt">Имя: <span>{character.name}</span></p>
+                <p className="card__opt">Статус: <span>{character.status}</span></p>
+                <p className="card__opt">Вид: <span>{character.species}</span></p>
+                <p className="card__opt">Пол: <span>{character.gender}</span></p>
             </div>}
         </>
             

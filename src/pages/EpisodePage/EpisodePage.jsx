@@ -6,9 +6,9 @@ export const EpisodePage = () => {
     return (
             <>
                 {loading ?<>Loading...</>: <div className="card">
-                    <p>Название: {episode.name}</p>
-                    <p>Эпизод: {episode.episode}</p>
-                    <p>Дата: {episode.air_date}</p>
+                    <p className="card__opt">Название: <span>{episode.name}</span></p>
+                    <p className="card__opt">Эпизод: <span>{episode.episode}</span></p>
+                    <p className="card__opt">Дата: <span>{episode.air_date}</span></p>
                 </div>}
             </>
             

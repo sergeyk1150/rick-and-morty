@@ -71,8 +71,6 @@ a {
 }
 
 .card {
-  width: 20%;
-  height: 20%;
   margin: 20px;
   padding: 20px;
   background: #111827;
@@ -96,6 +94,23 @@ a {
   object-fit: cover;
 }
 
+.card__opt {
+  color: #9ca3af;
+}
+
+.card__opt span {
+  text-decoration: underline;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.list {
+  list-style: none;
+  text-align: start;
+  margin: 20px;
+  text-decoration: underline;
+}
+
 .login__container {
   padding: 40px;
   display: flex;
@@ -117,4 +132,31 @@ button {
 
 .login__container > button {
   background-color: #22d3ee;
+}
+
+.greeting {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.burger-menu {
+  display: none;
+}
+.header-menu {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .header-menu {
+    display: none;
+  }
+  .burger-menu {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-links a {
+    color: black;
+  }
 }

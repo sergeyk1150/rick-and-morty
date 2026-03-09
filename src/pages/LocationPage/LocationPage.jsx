@@ -8,9 +8,9 @@ export const LocationPage = () => {
     return (
         <>
             {loading ? <>Loading</> : <div className="card">
-                <p>Название: {location.name}</p>
-                <p>Тип: {location.type}</p>
-                <p>Измерение: {location.dimension}</p>
+                <p className="card__opt">Название: <span>{location.name}</span></p>
+                <p className="card__opt">Тип: <span>{location.type}</span></p>
+                <p className="card__opt">Измерение: <span>{location.dimension}</span></p>
             </div>}
         </>
             

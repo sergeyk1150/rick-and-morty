@@ -1,35 +1,45 @@
-import { Routes, Route } from "react-router"
+import { Routes, Route } from "react-router-dom"
 import { PrivateRoute } from "./provateRoute"
-import { lazy } from "react"
-// import { MainLayout, CharactersPage, HomePage, LoginPage, NotFoundPage, EpisodesPage, LocationsPage, EpisodePage, LocationPage, CharacterPage } from "@/pages"
+import { lazy, Suspense } from "react"
 
-const HomePage = lazy(() => import('@/pages').then((module)=>({default: module.HomePage})))
-const CharactersPage = lazy(() => import('@/pages').then((module)=>({default: module.CharactersPage})))
-const CharacterPage = lazy(() => import('@/pages').then((module)=>({default: module.CharacterPage})))
-const EpisodesPage = lazy(() => import('@/pages').then((module)=>({default: module.EpisodesPage})))
-const LocationsPage = lazy(() => import('@/pages').then((module)=>({default: module.LocationsPage})))
-const EpisodePage = lazy(() => import('@/pages').then((module)=>({default: module.EpisodePage})))
-const LocationPage = lazy(() => import('@/pages').then((module)=>({default: module.LocationPage})))
-const MainLayout = lazy(() => import('@/pages').then((module)=>({default: module.MainLayout})))
-const LoginPage = lazy(() => import('@/pages').then((module)=>({default: module.LoginPage})))
-const NotFoundPage = lazy(() => import('@/pages').then((module)=>({default: module.NotFoundPage})))
+const HomePage = lazy(() => import('@/pages/HomePage/HomePage').then((module)=>({default: module.HomePage})))
+const CharactersPage = lazy(() => import('@/pages/CharactersPage/CharactersPage').then((module)=>({default: module.CharactersPage})))
+const CharacterPage = lazy(() => import('@/pages/CharacterPage/CharacterPage').then((module)=>({default: module.CharacterPage})))
+const EpisodesPage = lazy(() => import('@/pages/EpisodesPage/EpisodesPage').then((module)=>({default: module.EpisodesPage})))
+const EpisodePage = lazy(() => import('@/pages/EpisodePage/EpisodePage').then((module)=>({default: module.EpisodePage})))
+const LocationsPage = lazy(() => import('@/pages/LocationsPage/LocationsPage').then((module)=>({default: module.LocationsPage})))
+const LocationPage = lazy(() => import('@/pages/LocationPage/LocationPage').then((module)=>({default: module.LocationPage})))
+const MainLayout = lazy(() => import('@/pages/MainLayout/MainLayout').then((module)=>({default: module.MainLayout})))
+const LoginPage = lazy(() => import('@/pages/LoginPage/LoginPage').then((module)=>({default: module.LoginPage})))
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage/NotFoundPage').then((module)=>({default: module.NotFoundPage})))
 
 export const Router = () => {
     return (
-        <Routes>
-            <Route element={<MainLayout/>}>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/login" element={<LoginPage/>}/>
-                <Route element={<PrivateRoute/>}>
-                    <Route path="/characters" element={<CharactersPage/>}/>
-                    <Route path="/characters/:id" element={<CharacterPage/>}/>
-                    <Route path="/episodes" element={<EpisodesPage/>}/>
-                    <Route path="/episodes/:id" element={<EpisodePage/>}/>
-                    <Route path="/locations" element={<LocationsPage/>}/>
-                    <Route path="/locations/:id" element={<LocationPage/>}/>
+        <Suspense >
+            <Routes>
+                <Route element={<MainLayout/>}>
+                    <Route path="/" element={<HomePage/>}/>
+                    <Route path="/login" element={<LoginPage/>}/>
+                    <Route element={<PrivateRoute/>}>
+                        <Route path="/characters">
+                            <Route index element={<CharactersPage/>}/>
+                            <Route path=":id" element={<CharacterPage/>}/>
+                        </Route>
+
+                        <Route path="/episodes">
+                            <Route index element={<EpisodesPage/>}/>
+                            <Route path=":id" element={<EpisodePage/>}/>
+                        </Route>
+
+                        <Route path="/locations">
+                            <Route index element={<LocationsPage/>}/>
+                            <Route path=":id" element={<LocationPage/>}/>
+                        </Route>
+                    </Route>
+                    <Route path="*" element={<NotFoundPage/>}/>
                 </Route>
-                <Route path="*" element={<NotFoundPage/>}/>
-            </Route>
-        </Routes>
+            </Routes>
+        </Suspense>
+        
     )
 }

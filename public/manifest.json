@@ -1,0 +1,40 @@
+{
+    "name": "rick-and-morty",
+    "short_name": "RickAndMorty",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#0B0F14",
+    "theme_color": "#22D3EE",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "/sanches.png",
+            "type": "image/png",
+            "sizes": "300x300"
+        },
+        {
+            "src": "/apple.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "propose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshots/desktop1.png",
+            "type": "image/png",
+            "sizes": "1312x945",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/screenshots/desktop2.png",
+            "type": "image/png",
+            "sizes": "1312x945"
+        }
+    ]
+}
